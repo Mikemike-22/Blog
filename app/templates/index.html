@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+{% import 'macros.html' as macro%}
+{% block content %}
+<div class="container-fluid quotes">
+<div class="col-md-12">
+<h4 class="text-center">Quotes</h4>
+<p class="text-center">"{{random.quote}}"</p>
+<p class="text-center"><strong>Author: {{random.author}}</strong></p>
+</div>
+</div>
+{% for alert in get_flashed_messages() %}
+   <div class="alert alert-danger">
+       <button type="button" class="close" data-dismiss="alert">&times;</button>
+       {{ alert }}
+   </div>
+{% endfor %}
+<div class="container-fluid display">
+<div class="card-deck">
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Sports Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Get the Latest Sports Articles</h5>
+      <p class="card-text">Latest sports news from around the world with in-depth analysis, features, photos and videos covering football, tennis, motorsport, golf, rugby, sailing and skiing</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/sports" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Travel Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Get the Latest Travel Articles</h5>
+      <p class="card-text">Highlighting some of my favorite travel blogs that can help you travel better.</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/travel" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Fitness Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Get the Best Fitness Articles</h5>
+      <p class="card-text"> Fitness enthusiasts like you and me need the help of experts to stay focused and motivated.</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/fitness" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+</div>
+<div class="card-deck">
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Fashion Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Exciting Fashion Articles</h5>
+      <p class="card-text"> This are the go-to people when it comes to matters style and fashion</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/fashion" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Food Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Delicious Food Recipe Kenyan Articles</h5>
+      <p class="card-text">  Food Blog that shares recipes and cooking videos from all over the world with focus on using ingredients readily available.</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/food" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+<div class="card border-primary display">
+    <div class="card-header bg-transparent border-primary"><h4> <strong> Political Blogs</strong></h4></div>
+    <div class="card-body text-primary">
+      <h5 class="card-title">Are you looking for prominent political blogs in Kenya?</h5>
+      <p class="card-text">  Check out this articles for the best political blogs on the web</p>
+    </div>
+    <div class="bg-transparent border-primary"><a href="/blogs/politics" class="btn btn-info float-right">View Blogs</a></div>
+</div>
+</div>
+</div>
+<footer class="page-footer font-small unique-color-dark pt-4">
+
+        <!-- Footer Elements -->
+        <div class="container">
+    
+          <!-- Call to action -->
+          <ul class="list-unstyled list-inline text-center py-2">
+            <li class="list-inline-item">
+              <h5 class="mb-1">Subscribe to our newsletter</h5>
+            </li>
+            <li class="list-inline-item">
+              <a href="/subscription" class="btn btn-outline-white btn-rounded">Sign up!</a>
+            </li>
+          </ul>
+          <!-- Call to action -->
+    
+        </div>
+        <!-- Footer Elements -->
+    
+        <!-- Copyright -->
+        <div class="footer-copyright text-center py-3">© 2019 Copyright:
+          <a href="https://mdbootstrap.com/education/bootstrap/"> blog-it.com</a>
+        </div>
+        <!-- Copyright -->
+    
+      </footer>
+      <!-- Footer -->
+      {% endblock%}
