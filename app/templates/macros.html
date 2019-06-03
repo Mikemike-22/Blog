@@ -1,0 +1,16 @@
+
+{% macro displayBlogs(my_blog_list) %}
+{% for blogs in my_blog_list %}
+
+<div class="card border-info mb-3 spacing" style="min-width: 20rem;max-width: 20rem;">
+        <div class="card-body">
+          <h4 class="card-title">{{blogs.title}}</h4>
+          <p class="card-text">{{blogs.content| truncate(100)}}</p>
+          <p>Posted By: <strong>{{blogs.user.username}}</strong></p>
+          <p>Date posted {{blogs.posted.strftime('%Y-%m-%d')}}</p>
+          <a href="/blog/{{blogs.id}}" class="card-link btn btn-success float-right">Full Blog</a>
+        </div>
+      </div>
+   
+{% endfor %}
+{% endmacro%}
