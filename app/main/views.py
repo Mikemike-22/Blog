@@ -5,7 +5,7 @@ from flask import render_template
 
 @main.route('/')
 def index():
-    random = requests.get('http://quotes.stormconsultancy.co.uk/random.json').json()
+    # random = requests.get('http://quotes.stormconsultancy.co.uk/random.json').json()
 
     sports = Blog.get_blogs('Sports-Blog')
     travel = Blog.get_blogs('Travel-Blog')
