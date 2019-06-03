@@ -1,4 +1,4 @@
-#!/home/michael/Blog/tests/virtual/bin/python3
+#!/home/michael/Blog/virtual/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
