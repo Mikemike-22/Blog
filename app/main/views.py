@@ -21,6 +21,7 @@ def index():
 
     return render_template('index.html', sports = sports, travel = travel, fitness = fitness, fashion = fashion, food = food, random = random)
 
+
 @main.route('/user/<uname>')
 def profile(uname):
     user = User.query.filter_by(username = uname).first()
