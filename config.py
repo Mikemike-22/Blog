@@ -1,4 +1,6 @@
 import os
+import dj_database_url
+
 
 class Config:
     SECRET_KEY = os.environ.get('SECRET_KEY')
@@ -19,6 +21,7 @@ class ProdConfig(Config):
         Config:The parent configuration class with General configuration settings
     '''
     SQLALCHEMY_DATABASE_URI = os.environ.get("DATABASE_URL")
+    DATABASES ={default':dj_database_url.config()}
 
 config_options = {
     'development':DevConfig,
