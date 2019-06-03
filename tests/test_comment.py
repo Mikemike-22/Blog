@@ -26,28 +26,3 @@ class CommentsTest(unittest.TestCase):
         self.assertEquals(self.new_comment.comment,'This is my Test comment')
         self.assertEquals(self.new_comment.blog, new_blog)
 
-class Comment(db.Model):
-    __tablename__ = 'comments'
-    id = db.Column(db.Integer,primary_key = True)
-    comment = db.Column(db.String(1000))
-    name = db.Column(db.String)
-    blog = db.Column(db.Integer,db.ForeignKey("blogs.id"))
-    user_id = db.Column(db.Integer,db.ForeignKey("users.id"))
-
-    def save_comment(self):
-        db.session.add(self)
-        db.session.commit()
-
-    @classmethod
-    def get_comments(cls,blog):
-        comments = Comment.query.filter_by(blogit = blog).all()
-        return comments
-
-    @classmethod
-    def delete_comment(cls,id):
-        comment = Comment.query.filter_by(id=id).first()
-        db.session.delete(comment)
-        db.session.commit()
-
-    def __repr__(self):
-        return f'Comment{self.comment}'
